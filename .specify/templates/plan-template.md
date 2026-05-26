@@ -40,7 +40,16 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- Scope guard: Plan MUST remain within approved feature scope and explicitly list
+  out-of-scope items.
+- Architecture guard: Plan MUST preserve frontend/backend boundary integrity and
+  identify any cross-package interface changes.
+- Test guard: Plan MUST define failing-first tests and show how unit and integration
+  coverage will be maintained at >=80%.
+- UX and accessibility guard: UI changes MUST include keyboard access, labeling,
+  contrast, and light/dark mode behavior checks.
+- Maintainability guard: Plan MUST include lint/test verification and atomic change
+  strategy for review.
 
 ## Project Structure
 

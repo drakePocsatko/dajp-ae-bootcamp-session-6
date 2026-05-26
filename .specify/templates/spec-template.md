@@ -98,6 +98,19 @@
 - **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
 - **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
 
+### Constitution Alignment *(mandatory)*
+
+- **CA-001 Scope**: Define in-scope and out-of-scope behavior explicitly and confirm
+  no prohibited feature expansion is introduced.
+- **CA-002 Architecture**: Describe affected frontend/backend boundaries and any API or
+  service contract updates.
+- **CA-003 Testing**: List unit and integration test expectations for each user story,
+  including failing-first test intent.
+- **CA-004 Accessibility and UX**: Document required keyboard access, labeling,
+  contrast, and theme behavior impacts for UI changes.
+- **CA-005 Maintainability**: Identify linting, error handling, and review constraints
+  needed to keep changes small and auditable.
+
 ### Key Entities *(include if feature involves data)*
 
 - **[Entity 1]**: [What it represents, key attributes without implementation]
