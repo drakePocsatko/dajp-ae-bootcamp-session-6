@@ -24,7 +24,7 @@ description: "Task list for: Support for Overdue Todo Items"
 
 **Purpose**: Confirm test infrastructure is green before any changes are made.
 
-- [ ] T001 Verify frontend tests pass from clean baseline by running `npm test --workspace=packages/frontend` and confirming all existing tests pass
+- [X] T001 Verify frontend tests pass from clean baseline by running `npm test --workspace=packages/frontend` and confirming all existing tests pass
 
 **Checkpoint**: Baseline green — safe to begin Foundational work.
 
@@ -36,8 +36,8 @@ description: "Task list for: Support for Overdue Todo Items"
 
 **⚠️ CRITICAL**: Write tests first, confirm they FAIL, then implement.
 
-- [ ] T002 Write failing unit tests covering all 7 contract cases for `isOverdue()` in `packages/frontend/src/utils/__tests__/overdueUtils.test.js` (completed=true→false, no dueDate→false, empty string→false, invalid date→false, past date→true, today→false, future→false)
-- [ ] T003 Implement `isOverdue(todo)` using day-level midnight comparison in `packages/frontend/src/utils/overdueUtils.js` to make T002 tests pass
+- [X] T002 Write failing unit tests covering all 7 contract cases for `isOverdue()` in `packages/frontend/src/utils/__tests__/overdueUtils.test.js` (completed=true→false, no dueDate→false, empty string→false, invalid date→false, past date→true, today→false, future→false)
+- [X] T003 Implement `isOverdue(todo)` using day-level midnight comparison in `packages/frontend/src/utils/overdueUtils.js` to make T002 tests pass
 
 **Checkpoint**: `isOverdue()` is fully tested and green — all user story phases may now proceed.
 
@@ -53,12 +53,12 @@ description: "Task list for: Support for Overdue Todo Items"
 
 > **NOTE: These tests are REQUIRED for behavior changes. Write them FIRST and ensure they FAIL before implementation.**
 
-- [ ] T004 [US1] Write failing tests in `packages/frontend/src/components/__tests__/TodoCard.test.js`: (a) incomplete todo with past due date renders with `.overdue` class; (b) incomplete todo with today's date has no `.overdue` class; (c) incomplete todo with future date has no `.overdue` class; (d) incomplete todo with no due date has no `.overdue` class
+- [X] T004 [US1] Write failing tests in `packages/frontend/src/components/__tests__/TodoCard.test.js`: (a) incomplete todo with past due date renders with `.overdue` class; (b) incomplete todo with today's date has no `.overdue` class; (c) incomplete todo with future date has no `.overdue` class; (d) incomplete todo with no due date has no `.overdue` class
 
 ### Implementation for User Story 1
 
-- [ ] T005 [P] [US1] Add `.todo-card.overdue` CSS rules to `packages/frontend/src/App.css`: `border-color: var(--danger-color)` on `.todo-card.overdue` and `color: var(--danger-color)` on `.todo-card.overdue .todo-due-date`
-- [ ] T006 [US1] Add overdue class computation to the `TodoCard` view render in `packages/frontend/src/components/TodoCard.js`: import `isOverdue` from `../../utils/overdueUtils` and add `overdue` to the card's `className` when `isOverdue(todo)` returns true (makes T004 tests pass)
+- [X] T005 [P] [US1] Add `.todo-card.overdue` CSS rules to `packages/frontend/src/App.css`: `border-color: var(--danger-color)` on `.todo-card.overdue` and `color: var(--danger-color)` on `.todo-card.overdue .todo-due-date`
+- [X] T006 [US1] Add overdue class computation to the `TodoCard` view render in `packages/frontend/src/components/TodoCard.js`: import `isOverdue` from `../../utils/overdueUtils` and add `overdue` to the card's `className` when `isOverdue(todo)` returns true (makes T004 tests pass)
 
 **Checkpoint**: User Story 1 fully functional and independently testable. Render `TodoCard` with past/today/future/no dates and confirm overdue class behavior is correct.
 
@@ -74,7 +74,7 @@ description: "Task list for: Support for Overdue Todo Items"
 
 > **NOTE: These tests are REQUIRED for behavior changes. Write them FIRST and ensure they FAIL before implementation.**
 
-- [ ] T007 [US2] Write failing test in `packages/frontend/src/components/__tests__/TodoCard.test.js`: completed todo (`completed: 1`) with a past due date does NOT render with the `.overdue` class
+- [X] T007 [US2] Write failing test in `packages/frontend/src/components/__tests__/TodoCard.test.js`: completed todo (`completed: 1`) with a past due date does NOT render with the `.overdue` class
 
 ### Implementation for User Story 2
 
@@ -94,7 +94,7 @@ No new implementation files required — the `isOverdue()` function already retu
 
 > **NOTE: These tests are REQUIRED for behavior changes. Write them FIRST and ensure they FAIL before implementation.**
 
-- [ ] T008 [US3] Write failing tests in `packages/frontend/src/components/__tests__/TodoCard.test.js`: (a) re-render `TodoCard` with updated `todo` prop where due date changes from past to future → `.overdue` class removed; (b) re-render with due date changing from future to past on incomplete todo → `.overdue` class added; (c) re-render with `completed` toggled to `1` on an overdue todo → `.overdue` class removed
+- [X] T008 [US3] Write failing tests in `packages/frontend/src/components/__tests__/TodoCard.test.js`: (a) re-render `TodoCard` with updated `todo` prop where due date changes from past to future → `.overdue` class removed; (b) re-render with due date changing from future to past on incomplete todo → `.overdue` class added; (c) re-render with `completed` toggled to `1` on an overdue todo → `.overdue` class removed
 
 ### Implementation for User Story 3
 
@@ -108,10 +108,10 @@ No new implementation files required — overdue status is derived from `todo` p
 
 **Purpose**: Quality gates, WCAG validation, and regression verification.
 
-- [ ] T009 [P] Run `npm test --workspace=packages/frontend -- --coverage` and verify overall coverage remains ≥80%; address any gaps in `packages/frontend/src/utils/__tests__/overdueUtils.test.js` or `packages/frontend/src/components/__tests__/TodoCard.test.js`
-- [ ] T010 [P] Run linting in the frontend package with `npm run lint --workspace=packages/frontend` (or ESLint directly) and resolve all warnings and errors
+- [X] T009 [P] Run `npm test --workspace=packages/frontend -- --coverage` and verify overall coverage remains ≥80%; address any gaps in `packages/frontend/src/utils/__tests__/overdueUtils.test.js` or `packages/frontend/src/components/__tests__/TodoCard.test.js`
+- [X] T010 [P] Run linting in the frontend package with `npm run lint --workspace=packages/frontend` (or ESLint directly) and resolve all warnings and errors
 - [ ] T011 Validate WCAG AA contrast and theme behavior manually in both light and dark modes per the quickstart.md verification checklist (scenarios 1–6)
-- [ ] T012 Run the full test suite at the repository root (`npm test`) to confirm no regressions in the backend package or other frontend tests
+- [X] T012 Run the full test suite at the repository root (`npm test`) to confirm no regressions in the backend package or other frontend tests
 - [ ] T013 Run quickstart.md validation: start the app (`npm run start`) and manually execute all 6 verification scenarios end-to-end
 
 ---
